@@ -19,7 +19,7 @@ The following techniques have been used:
 
 
 ##Command to create an environment from the env.yml file you have generated. This ensures reproducibility of the exact same environment that you have created.
-``conda env -f env.yml``
+``conda env create -f env.yml``
 
 ##Command to activate the environment
 ``conda acrivate mle-dev``
