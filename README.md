@@ -17,3 +17,8 @@ The following techniques have been used:
 ## To excute the script
 python < scriptname.py >
 
+
+#Project Description
+#Command to create an environment from the env.yml file you have generated. This ensures reproducibility of the exact same environment that you have created.
+#Command to activate the environment
+#Command to run the python script.
