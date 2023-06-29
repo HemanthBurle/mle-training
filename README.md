@@ -16,3 +16,4 @@ The following techniques have been used:
 
 ## To excute the script
 python < scriptname.py >
+
