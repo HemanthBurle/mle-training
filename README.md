@@ -18,11 +18,11 @@ The following techniques have been used:
 ``python < scriptname.py >``
 
 
-##Command to create an environment from the env.yml file you have generated. This ensures reproducibility of the exact same environment that you have created.
+## Command to create an environment from the env.yml file you have generated. This ensures reproducibility of the exact same environment that you have created.
 ``conda env create -f env.yml``
 
-##Command to activate the environment
+## Command to activate the environment
 ``conda acrivate mle-dev``
 
-##Command to run the python script.
+## Command to run the python script.
 ``python nonstandardcode.py``
