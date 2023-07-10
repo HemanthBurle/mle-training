@@ -1,8 +1,8 @@
 # Median housing value prediction
 
-The housing data can be downloaded from https://raw.githubusercontent.com/ageron/handson-ml/master/. The script has codes to download the data. We have modelled the median house value on given housing data. 
+The housing data can be downloaded from https://raw.githubusercontent.com/ageron/handson-ml/master/. The script has codes to download the data. We have modelled the median house value on given housing data.
 
-The following techniques have been used: 
+The following techniques have been used:
 
  - Linear regression
  - Decision Tree
@@ -14,15 +14,20 @@ The following techniques have been used:
  - Multiple sampling techinuqies are evaluated. The data set is split into train and test.
  - All the above said modelling techniques are tried and evaluated. The final metric used to evaluate is mean squared error.
 
-## To excute the script
-``python < scriptname.py >``
+## How to run the code
+ - Open miniconda prompt
+ - Change directory to project folder
+ - Type the below line to replicate the environment created
+   - conda env create -f env.yml
+ - Now change directory to src folder
+ - Type the below line to execute the code
+   - python ingest_data.py --> to create the dataset for further process, else default dataset will be used
+   - python train.py --> to train the datasets available, else default trained model will be used
+   - python score.py --> to display the scores of different models used
+ - Alternatively
+   - if you want to change output directory for any code
+     - python "code name".py -p "directory name"
+   - if you want to change log path for any code
+     - python "code name".py --logpath "log path directory"
 
-
-## Command to create an environment from the env.yml file you have generated. This ensures reproducibility of the exact same environment that you have created.
-``conda env create -f env.yml``
-
-## Command to activate the environment
-``conda acrivate mle-dev``
-
-## Command to run the python script.
-``python nonstandardcode.py``
+## P.S. Whole process takes about 5-10 min
