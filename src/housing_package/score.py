@@ -28,6 +28,11 @@ if __name__ == "__main__":
         default="INFO",
     )
     parser.add_argument(
+        "--no-console-log",
+        help="Please specify the directory for the log file ",
+        default="logs",
+    )
+    parser.add_argument(
         "--logpath",
         help="Please specify the directory for the log file ",
         # choices=["", "logs"],
@@ -71,34 +76,34 @@ if __name__ == "__main__":
     with open(PICKLE_PATH, "rb") as file:
         new_cvres = pickle.load(file)
 
-    def model_score_calculation():
-        """This function calculates the score of the models
+def model_score_calculation():
+    """This function calculates the score of the models
 
-        Parameters
-        ----------
+    Parameters
+    ----------
 
-        Returns
-        -------
-                    prints the score of all models
+    Returns
+    -------
+                prints the score of all models
 
-        """
-        # linear regression scores
-        print("\nLinear regression MAE:", lin_reg[1], " RMSE:", lin_reg[0])
-        # decision tree rmse
-        print("\nDecision tree RMSE:", tree_reg)
+    """
+    # linear regression scores
+    print("\nLinear regression MAE:", lin_reg[1], " RMSE:", lin_reg[0])
+    # decision tree rmse
+    print("\nDecision tree RMSE:", tree_reg)
 
-        # random forest rmse
-        print("\nRandom forest regression RMSE:")
-        for mean_score, params in zip(cvres["mean_test_score"], cvres["params"]):
-            print(np.sqrt(-mean_score), params)
+    # random forest rmse
+    print("\nRandom forest regression RMSE:")
+    for mean_score, params in zip(cvres["mean_test_score"], cvres["params"]):
+        print(np.sqrt(-mean_score), params)
 
-        # random forest rmse
-        print("\nModified Random forest regression RMSE:")
-        for mean_score, params in zip(
-            new_cvres["mean_test_score"], new_cvres["params"]
-        ):
-            print(np.sqrt(-mean_score), params)
+    # random forest rmse
+    print("\nModified Random forest regression RMSE:")
+    for mean_score, params in zip(
+        new_cvres["mean_test_score"], new_cvres["params"]
+    ):
+        print(np.sqrt(-mean_score), params)
 
-        logging.info("The score calculation was successful")
+    logging.info("The score calculation was successful")
 
-    model_score_calculation()
+model_score_calculation()
