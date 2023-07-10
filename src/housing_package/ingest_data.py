@@ -38,6 +38,11 @@ if __name__ == "__main__":
         # choices=["", "logs"],
         default="logs",
     )
+    parser.add_argument(
+        "--no-console-log",
+        help="Please specify the directory for the log file ",
+        default="logs",
+    )
     args = parser.parse_args()
     os.makedirs("../../" + args.logpath, exist_ok=True)
     log_dict = {
