@@ -121,10 +121,15 @@ def train_models():
     with open(output_file, "wb") as f:
         pickle.dump(tree_rmse, f)
 
-    param_distribs = {
-        "n_estimators": randint(low=1, high=200),
-        "max_features": randint(low=1, high=8),
-    }
+   param_distribs = {
+    "n_estimators": [20, 30, 50, 100],
+    "max_features": [2, 3, 4],
+   }
+
+    output_file = os.path.join(ARTIFACTS_PATH,"param_distribs.pkl").replace("\\", "/")
+
+    with open(output_file, "wb") as f:
+        pickle.dump(param_distribs, f)
 
     forest_reg = RandomForestRegressor(random_state=42)
     rnd_search = RandomizedSearchCV(
@@ -148,6 +153,9 @@ def train_models():
         # then try 6 (2×3) combinations with bootstrap set as False
         {"bootstrap": [False], "n_estimators": [3, 10], "max_features": [2, 3, 4]},
     ]
+    output_file = os.path.join(ARTIFACTS_PATH,"param_grid.pkl").replace("\\", "/")
+    with open(output_file, "wb") as f:
+        pickle.dump(param_grid, f)
 
     forest_reg = RandomForestRegressor(random_state=42)
     # train across 5 folds, that's a total of (12+6)*5=90 rounds of training
