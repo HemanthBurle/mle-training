@@ -125,9 +125,7 @@ def train_models():
     "n_estimators": [20, 30, 50, 100],
     "max_features": [2, 3, 4],
    }
-
     output_file = os.path.join(ARTIFACTS_PATH,"param_distribs.pkl").replace("\\", "/")
-
     with open(output_file, "wb") as f:
         pickle.dump(param_distribs, f)
 
